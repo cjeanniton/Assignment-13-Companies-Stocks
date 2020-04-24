@@ -1,0 +1,209 @@
+<!doctype html>
+
+<!--THIS HOMEWORK WAS PRETTY TOUGH. I COULDNT FIGURE OUT HOW TO CONFIGUE THE .JS FILE AND INCORPORATE MONGO CORRRECTLY, SO I HARDCODED THE COMPANY/TICKER INFO IN THIS DOC. I FIGURED IT WOULD BE BETTER TO HAVE A WEBSITE THAT WORKS ON THE SURFACE AT LEAST. THANKS!-->
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>COMPANIES & STOCKS</title>
+
+<style>
+	body {background-color: #2F2F2F}
+	
+	.title {color: #23CC39; text-align: center; font-size: 60px; font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif"}
+	
+	.description {color: #FFFFFF; text-align: center; font-size: 20px; font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif"}
+	
+	.instructions {color: #FFFFFF; font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif"; font-size: 30px; text-align: center}
+	
+	.company {color: #FFFFFF; font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif"; font-size: 20px; text-align: center}
+	
+	.button {background-color: #23CC39; text-decoration: none; font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif"; font-size: 12px}
+	
+</style>
+	
+</head>
+
+<body>
+	<div class="title">COMPANIES & STOCKS</div>
+	<div class="description">You Want 'Em, We Got 'Em</div>
+	
+	<hr>
+	<br>
+	
+	<div class="instructions">Enter a company name or stock ticker...</div>
+	
+	<br>
+	
+	<div class="company">
+
+			
+			Company Name:
+			<input type="text" name="company" id="company_input" placeholder="Example: Apple">
+			
+			<br>
+			<br>
+			
+			<button class="button" onclick="getCompany()">Submit Company</button>
+			
+			<br>
+			<br>
+			<br>
+			
+			Stock Ticker:
+			<input type="text" id="ticker_input" name="ticker_input" placeholder="Example: AAPL">
+			
+			<br>
+			<br>
+			
+			<button class="button" onclick="getTicker()">Submit Ticker</button>
+			
+			<br>
+			<br>
+			
+		
+		<button class="button" onclick="empty_form()">Clear</button>
+		
+	</div>
+	
+	<script>
+		
+		var company, ticker;
+		company = {
+			"1-800-Flowers" : "FLWS",
+			"Abercrombie" : "ANF",
+			"Activision" : "EATVI",
+			"Adidas" : "ADDDF",
+			"Alphabet Inc" : "GOOG",
+			"Amazon.com" : "AMZN",
+			"AMC Entertainment" : "AMC",
+			"American Eagle" : "AEO",
+			"Anheuser-Busch" : "ABI.BR",
+			"Apple Inc" : "AAPL"
+		}
+		
+		ticker = {
+			"FLWS" : "1-800-Flowers",
+			"ANF" : "Abercrombie",
+			"EATVI" : "Activision",
+			"ADDDF" : "Adidas",
+			"GOOG" : "Alphabet Inc",
+			"AMZN" : "Amazon.com",
+			"AMC" : "AMC Entertainment",
+			"AEO" : "American Eagle",
+			"ABI.BR" : "Anheuser-Busch",
+			"AAPL" : "Apple Inc"
+		}
+		
+		function getCompany()
+			{
+				var input_company = document.getElementById("company_input").value;
+				var input_ticker = document.getElementById("ticker_input").value;
+				
+				if (input_company == "Apple Inc")
+					{
+						document.getElementById("ticker_input").value = company["Apple Inc"];
+					}
+				else if (input_company == "Abercrombie")
+					{
+						document.getElementById("ticker_input").value = company["Abercrombie"];
+					}
+				else if (input_company == "Activision")
+					{
+						document.getElementById("ticker_input").value = company["Activision"];
+					}
+				else if (input_company == "Adidas")
+					{
+						document.getElementById("ticker_input").value = company["Adidas"];
+					}
+				else if (input_company == "Alphabet Inc")
+					{
+						document.getElementById("ticker_input").value = company["Alphabet Inc"];
+					}
+				else if (input_company == "Amazon.com")
+					{
+						document.getElementById("ticker_input").value = company["Amazon.com"];
+					}
+				else if (input_company == "AMC Entertainment")
+					{
+						document.getElementById("ticker_input").value = company["AMC Entertainment"];
+					}
+				else if (input_company == "American Eagle")
+					{
+						document.getElementById("ticker_input").value = company["American Eagle"];
+					}
+				else if (input_company == "Anheuser-Busch")
+					{
+						document.getElementById("ticker_input").value = company["Anheuser-Busch"];
+					}
+				else if (input_company == "1-800-Flowers")
+					{
+						document.getElementById("ticker_input").value = company["1-800-Flowers"];
+					}
+				else
+					{
+						alert("Couldn't find that company... maybe try different spelling?");
+					}
+			}
+		
+		function getTicker()
+		{
+			var input_ticker = document.getElementById("ticker_input").value;
+				
+				if (input_ticker == "AAPL")
+					{
+						document.getElementById("company_input").value = ticker["AAPL"];
+					}
+				else if (input_ticker == "ABI.BR")
+					{
+						document.getElementById("company_input").value = ticker["ABI.BR"];
+					}
+				else if (input_ticker == "FLWS")
+					{
+						document.getElementById("company_input").value = ticker["FLWS"];
+					}
+				else if (input_ticker == "ANF")
+					{
+						document.getElementById("company_input").value = ticker["ANF"];
+					}
+				else if (input_ticker == "EATVI")
+					{
+						document.getElementById("company_input").value = ticker["EATVI"];
+					}
+				else if (input_ticker == "ADDDF")
+					{
+						document.getElementById("company_input").value = ticker["ADDDF"];
+					}
+				else if (input_ticker == "GOOG")
+					{
+						document.getElementById("company_input").value = ticker["GOOG"];
+					}
+				else if (input_ticker == "AMZN")
+					{
+						document.getElementById("company_input").value = ticker["AMZN"];
+					}
+				else if (input_ticker == "AMC")
+					{
+						document.getElementById("company_input").value = ticker["AMC"];
+					}
+				else if (input_ticker == "AEO")
+					{
+						document.getElementById("company_input").value = ticker["AEO"];
+					}
+				else
+					{
+						alert("Couldn't find that company... maybe try different spelling?");
+					}
+		}
+		
+		function empty_form()
+		{
+			var clear = "";
+			document.getElementById("ticker_input").value = clear;
+			document.getElementById("company_input").value = clear;
+		}
+		
+	</script>
+	
+</body>
+</html>
